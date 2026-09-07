@@ -1,3 +1,5 @@
 <?php
 
-uses(Jeffersongoncalves\LaravelMixpanelApi\Tests\TestCase::class)->in('Feature', 'Unit');
+use JeffersonGoncalves\MixpanelApi\Tests\TestCase;
+
+uses(TestCase::class)->in('Feature');

@@ -3,20 +3,28 @@
     "description": "Laravel client for the Mixpanel HTTP API: track events, update user profiles, and query insights, funnels, retention, and raw event exports.",
     "keywords": [
         "laravel",
-        "laravel-mixpanel-api"
+        "mixpanel",
+        "analytics",
+        "api",
+        "client",
+        "tracking",
+        "events"
     ],
     "homepage": "https://github.com/jeffersongoncalves/laravel-mixpanel-api",
     "license": "MIT",
+    "type": "library",
     "authors": [
         {
-            "name": "Jefferson Simão Gonçalves",
-            "email": "gerson.simao.92@gmail.com"
+            "name": "Jefferson Gonçalves",
+            "email": "gerson.simao.92@gmail.com",
+            "role": "Developer"
         }
     ],
     "require": {
         "php": "^8.2",
-        "spatie/laravel-package-tools": "^1.16",
-        "illuminate/contracts": "^12.0|^13.0"
+        "illuminate/http": "^12.0|^13.0",
+        "illuminate/support": "^12.0|^13.0",
+        "spatie/laravel-package-tools": "^1.14.0"
     },
     "require-dev": {
         "larastan/larastan": "^3.0",
@@ -27,20 +35,19 @@
     },
     "autoload": {
         "psr-4": {
-            "Jeffersongoncalves\\LaravelMixpanelApi\\": "src/"
+            "JeffersonGoncalves\\MixpanelApi\\": "src/"
         }
     },
     "autoload-dev": {
         "psr-4": {
-            "Jeffersongoncalves\\LaravelMixpanelApi\\Tests\\": "tests/"
+            "JeffersonGoncalves\\MixpanelApi\\Tests\\": "tests/"
         }
     },
     "scripts": {
         "post-autoload-dump": "@php ./vendor/bin/testbench package:discover --ansi",
-        "test": "vendor/bin/pest",
-        "test-coverage": "vendor/bin/pest --coverage",
+        "analyse": "vendor/bin/phpstan analyse",
         "format": "vendor/bin/pint",
-        "analyse": "vendor/bin/phpstan analyse"
+        "test": "vendor/bin/pest"
     },
     "config": {
         "sort-packages": true,
@@ -52,10 +59,10 @@
     "extra": {
         "laravel": {
             "providers": [
-                "Jeffersongoncalves\\LaravelMixpanelApi\\LaravelMixpanelApiServiceProvider"
+                "JeffersonGoncalves\\MixpanelApi\\MixpanelApiServiceProvider"
             ],
             "aliases": {
-                "LaravelMixpanelApi": "Jeffersongoncalves\\LaravelMixpanelApi\\Facades\\LaravelMixpanelApi"
+                "MixpanelApi": "JeffersonGoncalves\\MixpanelApi\\Facades\\MixpanelApi"
             }
         }
     },
